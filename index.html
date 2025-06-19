@@ -306,7 +306,85 @@
             margin-bottom: 1rem;
         }
 
-        /* Game Links Section */
+        .studios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .studio-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .studio-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .studio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .studio-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .studio-name {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .studio-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 1.5rem 0;
+            gap: 1rem;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 0.5rem;
+        }
+
+        .studio-role {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            display: inline-block;
+        }
+
         .game-links {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -332,7 +410,6 @@
             border-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* Contact Section */
         .contact-info {
             text-align: center;
             font-size: 1.2rem;
@@ -351,7 +428,6 @@
             transform: translateY(-2px);
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -398,6 +474,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#studios">Studios</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#games">Games</a></li>
                 <li><a href="#goals">Goals</a></li>
@@ -406,7 +483,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>rokamo_dev</h1>
@@ -422,6 +498,39 @@
             <div class="about-text fade-in">
                 <p>Hey, I'm rokamo. I am a roblox game developer, mostly working in the scripting department. I've been scripting on roblox for around 4-5 years now, and I always try to do better!</p>
                 <p>I keep an eye on quality over quantity. Weather it's with the most simple obby systems, to complex gun systems, I can do, and if not, I always put in 100% of my effort into at least trying.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="studios">
+        <h2 class="section-title fade-in">Studio Affiliations</h2>
+        <div class="studios-grid">
+            <div class="studio-card fade-in">
+                <div class="studio-icon">🏢</div>
+                <h3 class="studio-name">Germtrum! Studios</h3>
+                <div class="studio-stats">
+                    <div class="stat">
+                        <span class="stat-number">35k+</span>
+                        <span class="stat-label">Members</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">360k+</span>
+                        <span class="stat-label">Visits Contributed</span>
+                    </div>
+                </div>
+                <p class="studio-role">Developer</p>
+            </div>
+            
+            <div class="studio-card fade-in">
+                <div class="studio-icon">🎯</div>
+                <h3 class="studio-name">KZO Studio</h3>
+                <div class="studio-stats">
+                    <div class="stat">
+                        <span class="stat-number">9k+</span>
+                        <span class="stat-label">Members</span>
+                    </div>
+                </div>
+                <p class="studio-role">Developer/Intern</p>
             </div>
         </div>
     </section>
@@ -530,9 +639,6 @@
             </div>
             <div class="contact-item">
                 <strong>Available For:</strong> Short-term & Long-term Projects
-            </div>
-            <div class="contact-item">
-                <strong>Working for:</strong> RoGet discord server. RoGet allows customers to purchase custom and premade assets from creators. From scripts to models, RoGet allows everything! Thanks to how it's built, if you become a creator, customers are more likely to order from you again, making it very convenient
             </div>
         </div>
     </section>
